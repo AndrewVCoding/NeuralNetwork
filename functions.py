@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# Activation Functions
 def relu(x):
     if x <= 0:
         return 0
@@ -32,15 +33,13 @@ def d_purelin(x):
 
 
 # loss functions
-def loss(x, s):
+def means_squared(x, s):
     return (1 / len(x)) * sum(np.power(s - x, 2))
 
-
-def linear(s, t):
-    return np.transpose(t)
+# To be implemented: Log Likelihood, cross entropy, soft max
 
 
-func_dict = {'relu': relu, 'd_relu': d_relu, 'sigmoid': sigmoid, 'd_sigmoid': d_sigmoid, 'purelin': purelin, 'd_purelin': d_purelin}
+func_dict = {'relu': relu, 'd_relu': d_relu, 'sigmoid': sigmoid, 'd_sigmoid': d_sigmoid, 'purelin': purelin, 'd_purelin': d_purelin, 'means_squared': means_squared}
 
 
 def func(f):
